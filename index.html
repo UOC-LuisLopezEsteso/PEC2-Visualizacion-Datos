@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PEC 2 · Visualización de Datos</title>
+<meta name="description" content="PEC 2: gráfico de áreas, dendrograma lineal y bump chart. Clasificación taxonómica de mamíferos del orden Carnivora.">
+<style>
+:root{font-family:system-ui,-apple-system,sans-serif;color:#172b3a;background:#f3f6f8;line-height:1.6}*{box-sizing:border-box}body{margin:0}main{max-width:1320px;margin:auto;padding:36px 24px 56px}a{color:#155c87;text-underline-offset:3px}a:focus-visible,button:focus-visible{outline:3px solid #cb7310;outline-offset:4px}.eyebrow{font-size:.8rem;letter-spacing:.13em;text-transform:uppercase;color:#496577}h1{font-size:clamp(2rem,5vw,3.25rem);line-height:1.15;margin:12px 0 18px}h2{font-size:1.55rem;line-height:1.25}.intro{max-width:760px;color:#405969}.techniques{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0}.card,.graph{background:white;border:1px solid #d6e1e7;border-radius:12px}.card{padding:20px}.card h2{font-size:1.1rem;margin:0 0 8px}.card p{font-size:.95rem;margin:0 0 12px}.status{color:#536b79;font-size:.85rem}.graph{padding:24px;margin-top:24px}.flourish-embed{min-height:320px}.toolbar{display:flex;gap:16px;flex-wrap:wrap;align-items:center;margin:18px 0}button{font:inherit;background:#155c87;color:white;border:0;border-radius:6px;padding:9px 15px;cursor:pointer}.viewport{overflow:auto;background:#fff;border:1px solid #e0e7ed;border-radius:6px;padding:12px;max-height:85vh}.viewport img{display:block;width:100%;height:auto}.viewport.actual img{width:1200px;max-width:none}.note,footer{font-size:.9rem;color:#536b79}footer{margin-top:28px}@media(max-width:700px){main{padding:24px 16px}.techniques{grid-template-columns:1fr}.graph{padding:16px}}
+</style>
+</head>
+<body>
+<main>
+<header><p class="eyebrow">UOC · PEC 2</p><h1>Visualización de Datos</h1><p class="intro">Tres formas de explorar los datos: evolución temporal, estructura jerárquica y cambios de posición.</p></header>
+<nav class="techniques" aria-label="Técnicas de visualización">
+<article class="card"><h2>Area Chart</h2><p>Evolución del tiempo diario dedicado a ver televisión en España, 1997–2025.</p><a href="#area-chart">Ver el gráfico de áreas</a><p class="status">Visualización disponible · Flourish</p></article>
+<article class="card"><h2>Linear Dendrogram</h2><p>Jerarquía taxonómica de mamíferos del orden Carnivora.</p><a href="#dendrograma">Ver el dendrograma</a><p class="status">Visualización disponible · RAWGraphs</p></article>
+<article class="card"><h2>Bump Chart</h2><p>Cambios de posición relativa de series de anime a lo largo del tiempo.</p><a href="#bump-chart">Ver el bump chart</a><p class="status">Visualización disponible · Flourish</p></article>
+</nav>
+<section class="graph" id="area-chart" aria-labelledby="area-title">
+<h2 id="area-title">Area Chart · Consumo televisivo en España</h2>
+<p>Evolución del tiempo diario dedicado a ver televisión entre 1997 y 2025, expresado en minutos.</p>
+<div class="toolbar"><a href="https://public.flourish.studio/visualisation/30707315/" target="_blank" rel="noopener">Abrir en Flourish</a><a href="area-chart/data/television.csv" download>Descargar datos CSV</a><a href="https://github.com/UOC-LuisLopezEsteso/PEC2-Visualizacion-Datos/blob/main/area-chart/README.md">Documentación</a></div>
+<div class="flourish-embed flourish-chart" data-src="visualisation/30707315"><noscript><img src="https://public.flourish.studio/visualisation/30707315/thumbnail" width="100%" alt="Gráfico de áreas del tiempo diario dedicado a ver televisión en España, 1997–2025."></noscript></div>
+</section>
+<section class="graph" id="dendrograma" aria-labelledby="graph-title">
+<h2 id="graph-title">Clasificación taxonómica de mamíferos</h2><p>Orden → familia → género → especie. El dendrograma muestra relaciones jerárquicas; las longitudes de las ramas no representan distancias evolutivas.</p>
+<div class="toolbar"><button type="button" id="size-toggle" aria-pressed="false" hidden>Ver a tamaño original</button><a href="linear-dendrogram/visualizacion/linear-dendrogram.svg" target="_blank" rel="noopener">Abrir SVG</a><a href="linear-dendrogram/data/mamiferos.csv" download>Descargar datos CSV</a><a href="https://github.com/UOC-LuisLopezEsteso/PEC2-Visualizacion-Datos/blob/main/linear-dendrogram/README.md">Documentación</a></div>
+<div class="viewport" id="viewport" tabindex="0" role="region" aria-label="Dendrograma; desplázate para explorar el gráfico"><img src="linear-dendrogram/visualizacion/linear-dendrogram.svg" width="1200" height="1870" alt="Dendrograma taxonómico de mamíferos del orden Carnivora: familias, géneros y especies. Los datos completos están disponibles en el enlace de descarga CSV."></div>
+<p class="note">En pantallas pequeñas, activa el tamaño original y desplázate por el gráfico para leer las etiquetas.</p>
+</section>
+<section class="graph" id="bump-chart" aria-labelledby="bump-title">
+<h2 id="bump-title">Bump Chart · Series de anime</h2>
+<p>Posiciones mensuales de interés de búsqueda mundial de cinco series de anime, 2004–2025. La posición 1 indica el mayor interés entre las cinco series; los empates comparten posición. Fuente: Google Trends.</p>
+<div class="toolbar"><a href="https://public.flourish.studio/visualisation/30718545/" target="_blank" rel="noopener">Abrir en Flourish</a><a href="bump-chart/data/anime.csv" download>Descargar índices originales</a><a href="bump-chart/data/anime-posiciones.csv" download>Descargar posiciones calculadas</a><a href="https://github.com/UOC-LuisLopezEsteso/PEC2-Visualizacion-Datos/blob/main/bump-chart/README.md">Documentación</a></div>
+<div class="flourish-embed flourish-chart" data-src="visualisation/30718545"><noscript><img src="https://public.flourish.studio/visualisation/30718545/thumbnail" width="100%" alt="Bump chart de los cambios de posición relativa de series de anime."></noscript></div>
+</section>
+<section class="graph" aria-labelledby="presentation-title"><h2 id="presentation-title">Presentación de la PEC 2</h2><p>Material definitivo de la PEC 2 de Visualización de Datos.</p><div class="toolbar"><a href="presentacion/PEC2_LLE.pdf" target="_blank" rel="noopener">Abrir presentación PDF</a><a href="presentacion/PEC2_LLE.pdf" download>Descargar presentación</a></div></section>
+<footer><a href="https://github.com/UOC-LuisLopezEsteso/PEC2-Visualizacion-Datos">Repositorio del proyecto</a> · <a href="https://github.com/UOC-LuisLopezEsteso/PEC2-Visualizacion-Datos/blob/main/presentacion/README.md">Presentación</a></footer>
+</main>
+<script src="https://public.flourish.studio/resources/embed.js" defer></script>
+<script>
+const button=document.getElementById('size-toggle');const viewport=document.getElementById('viewport');button.hidden=false;button.addEventListener('click',()=>{const actual=viewport.classList.toggle('actual');button.setAttribute('aria-pressed',String(actual));button.textContent=actual?'Ajustar al ancho':'Ver a tamaño original';});
+</script>
+</body>
+</html>
